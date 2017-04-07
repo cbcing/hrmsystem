@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta content="text/html;charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link th:href="@{bootstrap/css/bootstrap.css}" rel="stylesheet"/>
+    <link th:href="@{bootstrap/css/bootstrap-theme.css}" rel="stylesheet"/>
+</head>
+<body>
+<table border="1">
+    <thead>用户信息</thead>
+    <tbody>
+    <tr>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>出生日期</th>
+        <th>身高</th>
+        <th>体重</th>
+        <th>婚姻状况</th>
+        <th>国籍</th>
+        <th>政治面貌</th>
+        <th>证件类型</th>
+        <th>证件号码</th>
+    </tr>
+    <tr th:each="users : ${users}">
+        <td th:text="${users.name}"></td>
+        <td th:text="${users.sex}"></td>
+        <td th:text="${users.birthday}"></td>
+        <td th:text="${users.height}"></td>
+        <td th:text="${users.weight}"></td>
+        <td th:text="${users.maritalStatus}"></td>
+        <td th:text="${users.county}"></td>
+        <td th:text="${users.politicalStatus}"></td>
+        <td th:text="${users.typeOfCertificate}"></td>
+        <td th:text="${users.numberOfCertificate}"></td>
+    </tr>
+    </tbody>
+</table>
+<script th:src="@{js/jquery.min.js}" type="text/javascript"></script>
+<script th:src="@{bootstrap/js/bootstrap.js}"></script>
+</body>
+</html>
