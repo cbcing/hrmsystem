@@ -26,7 +26,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> getAllUser() {
+    public List<User> getAllUsers() {
         List<User> users = new ArrayList<>();
         Iterator iterator = userDao.findAll().iterator();
         while (iterator.hasNext()) {

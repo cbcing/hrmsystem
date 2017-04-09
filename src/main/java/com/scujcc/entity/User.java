@@ -1,5 +1,7 @@
 package com.scujcc.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -8,21 +10,33 @@ import java.util.Date;
  */
 
 @Entity
-@Table(name = "user")
+@Table(name = "Users")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private int id;
+    @Column(name = "name")
     private String name;
+    @Column(name = "sex")
     private String sex;
+    @Column(name = "birthday")
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date birthday;
+    @Column(name = "height")
     private int height;
+    @Column(name = "weight")
     private int weight;
+    @Column(name = "marital_status")
     private String maritalStatus;
+    @Column(name = "country")
     private String country;
+    @Column(name = "political_status")
     private String politicalStatus;
+    @Column(name = "type_of_certificate")
     private String typeOfCertificate;
+    @Column(name = "number_of_certificate")
     private String numberOfCertificate;
 
     public int getId() {

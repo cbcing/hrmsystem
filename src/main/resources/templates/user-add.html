@@ -20,7 +20,7 @@
         </tr>
         <tr>
             <td>Birthday:</td>
-            <td><input type="text" th:field="*{birthday}"/></td>
+            <td><input type="date" th:type="date" th:field="*{birthday}"/></td>
         </tr>
         <tr>
             <td>Height:</td>
@@ -58,6 +58,8 @@
         </tr>
     </table>
 </form>
+<br/>
+<a href="/index">返回主页面</a>
 <!--
 <form action="#" th:action="@{/user/reslutofadd}" th:object="${User}" method="post">
     <fieldset>
