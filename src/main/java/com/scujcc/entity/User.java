@@ -20,7 +20,7 @@ public class User {
     private int height;
     private int weight;
     private String maritalStatus;
-    private String county;
+    private String country;
     private String politicalStatus;
     private String typeOfCertificate;
     private String numberOfCertificate;
@@ -81,12 +81,12 @@ public class User {
         this.maritalStatus = maritalStatus;
     }
 
-    public String getCounty() {
-        return county;
+    public String getCountry() {
+        return country;
     }
 
-    public void setCounty(String county) {
-        this.county = county;
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     public String getPoliticalStatus() {

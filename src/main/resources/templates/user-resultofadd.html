@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Result Of Add Users</title>
+</head>
+<body>
+    <h1>Result</h1>
+    <p th:text="'id : ' + ${user.name}"></p>
+    <p th:text="'sex : ' + ${user.sex}"></p>
+    <p th:text="'birthday : ' + ${user.birthday}"></p>
+    <p th:text="'height : ' + ${user.height}"></p>
+    <p th:text="'weight : ' + ${user.weight}"></p>
+    <p th:text="'marital_status : ' + ${user.martialStatus}"></p>
+    <p th:text="'country : ' + ${user.coountry}"></p>
+    <p th:text="'political_status : ' + ${user.politicalStatus}"></p>
+    <p th:text="'type_of_certificate : ' + ${user.typeOfCertificate}"></p>
+    <p th:text="'number_of_certificate : ' + ${user.number_of_certificate}"></p>
+    <a href="/user/add">Continue add user</a>
+</body>
+</html>

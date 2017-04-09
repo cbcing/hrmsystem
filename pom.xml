@@ -40,13 +40,6 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- mybatis -->
-		<dependency>
-			<groupId>org.mybatis</groupId>
-			<artifactId>mybatis</artifactId>
-			<version>3.4.2</version>
-		</dependency>
-
 		<!-- mysql jdbc -->
 		<dependency>
 			<groupId>mysql</groupId>

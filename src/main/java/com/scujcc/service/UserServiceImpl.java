@@ -27,11 +27,16 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> getAllUser() {
-        List<User> users = new ArrayList<User>();
+        List<User> users = new ArrayList<>();
         Iterator iterator = userDao.findAll().iterator();
         while (iterator.hasNext()) {
             users.add((User)iterator.next());
         }
         return users;
+    }
+
+    @Override
+    public void addUser(User user){
+        userDao.save(user);
     }
 }
