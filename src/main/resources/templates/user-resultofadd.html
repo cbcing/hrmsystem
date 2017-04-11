@@ -3,25 +3,25 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>添加结果</title>
+    <title>Result Of Add User</title>
     <link href="../static/bootstrap/css/bootstrap.min.css" th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
     <link href="../static/bootstrap/css/bootstrap-theme.min.css" th:href="@{/bootstrap/css/bootstrap-theme.min.css}" rel="stylesheet"/>
 </head>
 <body>
     <h1>Result</h1>
-    <p th:text="'id : ' + ${user.name}"></p>
-    <p th:text="'sex : ' + ${user.sex}"></p>
-    <p th:text="'birthday : ' + ${user.birthday}"></p>
-    <p th:text="'height : ' + ${user.height}"></p>
-    <p th:text="'weight : ' + ${user.weight}"></p>
-    <p th:text="'marital_status : ' + ${user.maritalStatus}"></p>
-    <p th:text="'country : ' + ${user.country}"></p>
-    <p th:text="'political_status : ' + ${user.politicalStatus}"></p>
-    <p th:text="'type_of_certificate : ' + ${user.typeOfCertificate}"></p>
-    <p th:text="'number_of_certificate : ' + ${user.numberOfCertificate}"></p>
+    <p th:text="'Name : ' + ${user.name}"></p>
+    <p th:text="'Sex : ' + ${user.sex}"></p>
+    <p th:text="'Birthday : ' + ${user.birthday}"></p>
+    <p th:text="'Height : ' + ${user.height}"></p>
+    <p th:text="'Weight : ' + ${user.weight}"></p>
+    <p th:text="'Marital Status : ' + ${user.maritalStatus}"></p>
+    <p th:text="'Country : ' + ${user.country}"></p>
+    <p th:text="'Political Status : ' + ${user.politicalStatus}"></p>
+    <p th:text="'Type Of Certificate : ' + ${user.typeOfCertificate}"></p>
+    <p th:text="'Number Of Certificate : ' + ${user.numberOfCertificate}"></p>
     <a href="/user/add">Continue add user</a>
     <br/>
-    <a href="/index">返回主页面</a>
+    <a href="/index">Return To index</a>
 
     <script src="../static/js/jquery.min.js" th:src="@{/js/jquery.min.js}" type="text/javascript"></script>
     <script src="../static/bootstrap/js/bootstrap.min.js" th:src="@{/bootstrap/js/bootstrap.min.js}"></script>

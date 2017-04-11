@@ -4,25 +4,33 @@
     <meta content="text/html;charset=UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>人力资源管理系统</title>
+    <title>Human Resource Management System</title>
     <link href="../static/bootstrap/css/bootstrap.min.css" th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
     <link href="../static/bootstrap/css/bootstrap-theme.min.css" th:href="@{/bootstrap/css/bootstrap-theme.min.css}" rel="stylesheet"/>
 </head>
 <body>
 
-<h1>人力资源管理系统</h1><br/>
+<h1>Human Resource Management System</h1><br/>
 
 <ul class="list-group">
-    <li class="list-group-item"><a href="/user/add">添加用户</a><br/></li>
+    <li class="list-group-item"><a href="/user/add">Add New User</a><br/></li>
     <li class="list-group-item">
         <form action="＃" th:action="@{/user/showbyid}" method="post">
             <fieldset>
-                <input type="text" name="id" value="查询用户"/>
-                <input type="submit" value="提交"/>
+                <input type="text" name="id" value="Query User By Id"/>
+                <input type="submit" value="Submit"/>
             </fieldset>
         </form>
     </li>
-    <li class="list-group-item"><a href="/user/showall">展示用户</a></li>
+    <li class="list-group-item">
+        <form action="#" th:action="@{/user/showbyname}" method="post">
+            <fieldset>
+                <input type="text" name="name" value="Query User By Name"/>
+                <input type="submit" value="Submit"/>
+            </fieldset>
+        </form>
+    </li>
+    <li class="list-group-item"><a href="/user/showall">Show All Users</a></li>
 </ul>
 
 <!--

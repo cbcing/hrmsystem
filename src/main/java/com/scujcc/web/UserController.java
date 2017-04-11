@@ -52,9 +52,17 @@ public class UserController {
     @RequestMapping(value = "user/showbyid", method = RequestMethod.POST)
     public String showById(@Param("id") int id, Model model) {
         User user = userService.getUserById(id);
-        model.addAttribute("userofone", user);
+        model.addAttribute("user", user);
 
-        return "user-showbyid";
+        return "user-showsingle";
+    }
+
+    @RequestMapping(value = "/user/showbyname", method = RequestMethod.POST)
+    public String showByName(@Param("name") String name, Model model) {
+       List user = userService.getUserByName(name);
+       model.addAttribute("user", user);
+
+       return "user-showsingle";
     }
 
     @RequestMapping(value = "user/showall", method = RequestMethod.GET)
