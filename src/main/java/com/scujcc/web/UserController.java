@@ -64,4 +64,11 @@ public class UserController {
 
         return "user-showall";
     }
+
+    @RequestMapping(value = "/user/delete", method = RequestMethod.GET)
+    public String delete(@Param("id") int id) {
+       userService.deleteUser(id);
+
+       return "redirect:/user/showall";
+    }
 }

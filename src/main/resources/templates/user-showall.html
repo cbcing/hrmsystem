@@ -23,6 +23,7 @@
         <th>政治面貌</th>
         <th>证件类型</th>
         <th>证件号码</th>
+        <th>操作</th>
     </tr>
     <tr th:each="users : ${users}">
         <td th:text="${users.name}"></td>
@@ -35,6 +36,7 @@
         <td th:text="${users.politicalStatus}"></td>
         <td th:text="${users.typeOfCertificate}"></td>
         <td th:text="${users.numberOfCertificate}"></td>
+        <td><a th:href="@{/user/delete(id=${users.id})}">删除</a></td>
     </tr>
     </tbody>
 </table>
