@@ -1,6 +1,8 @@
 package com.scujcc.web;
 
+import com.scujcc.entity.Country;
 import com.scujcc.entity.User;
+import com.scujcc.service.CountryServiceImpl;
 import com.scujcc.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -28,6 +30,9 @@ public class UserController {
    @Autowired
     UserServiceImpl userService;
 
+   @Autowired
+    CountryServiceImpl countryService;
+
    @InitBinder
    private void dateBinder(WebDataBinder webDataBinder){
        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -37,6 +42,9 @@ public class UserController {
 
     @RequestMapping(value = "/user/add", method = RequestMethod.GET)
     public String add(Model model) {
+        List<Country> countries = countryService.getAllCountries(); //得到所有的国家。
+
+        model.addAttribute("countries", countries);
         model.addAttribute("user", new User());
         return "user-add";
     }
