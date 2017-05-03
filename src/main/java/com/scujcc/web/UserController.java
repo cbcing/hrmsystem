@@ -11,10 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -40,13 +37,13 @@ public class UserController {
        webDataBinder.registerCustomEditor(Date.class, customDateEditor);
    }
 
+    @ResponseBody
     @RequestMapping(value = "/user/add", method = RequestMethod.GET)
-    public String add(Model model) {
+    @CrossOrigin(origins = "http://localhost:3000")
+    public List<Country> add() {
         List<Country> countries = countryService.getAllCountries(); //得到所有的国家。
 
-        model.addAttribute("countries", countries);
-        model.addAttribute("user", new User());
-        return "user-add";
+        return countries;
     }
 
     @RequestMapping(value = "/user/resultofadd", method = RequestMethod.POST)
@@ -57,7 +54,7 @@ public class UserController {
         return "user-resultofadd";
     }
 
-    @RequestMapping(value = "user/showbyid", method = RequestMethod.POST)
+    @RequestMapping(value = "/user/showbyid", method = RequestMethod.POST)
     public String showById(@Param("id") int id, Model model) {
         User user = userService.getUserById(id);
         model.addAttribute("user", user);
@@ -73,12 +70,13 @@ public class UserController {
        return "user-showsingle";
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(value = "user/showall", method = RequestMethod.GET)
-    private String showAll(Model model) {
+    @ResponseBody
+    private List<User> showAll() {
         List<User> users = userService.getAllUsers();
-        model.addAttribute("users", users);
 
-        return "user-showall";
+        return users;
     }
 
     @RequestMapping(value = "/user/delete", method = RequestMethod.GET)

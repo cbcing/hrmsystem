@@ -18,6 +18,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class IndexControllerTest {
 
+    @Autowired
+    IndexController indexController;
+
     @LocalServerPort
     private int port;
 
@@ -25,8 +28,13 @@ public class IndexControllerTest {
     private TestRestTemplate restTemplate;
 
     @Test
+    public void testIndex(){
+        assertThat(indexController).isNotNull();
+    }
+
+    @Test
     public void indexShouldReturnDefaultMessage() throws Exception {
-        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/index", String.class)).contains("index");
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/index", String.class)).contains("<meta content=\"text/html;charset=UTF-8\" />");
     }
 
 }
